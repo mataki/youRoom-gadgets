@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var loading_img_dom = $("<img src='http://github.com/mataki/youRoom-gadgets/raw/dev/home/bouncing_ball.gif' class='loading'>");
+
   function showOneSection(toshow) {
     $('#main, #approval, #waiting').hide();
     $('#' + toshow).show();
@@ -104,7 +106,7 @@ $(document).ready(function() {
     var entryId = entry.id;
     var groupId = $(this).parents(".root.entry").find('.group')[0].attributes[0].value;
     var url = "http://www.youroom.sg/r/" + groupId + "/entries/" + entryId + ".json";
-    $(this).addClass('disable').removeClass('show').append("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+    $(this).addClass('disable').removeClass('show').append($loading_img);
 
     callYouRoom(url, "get", function(result) {
       $(entry).find('.children').empty().haml(getChildrenHaml(result.entry, groupId));
@@ -164,7 +166,7 @@ $(document).ready(function() {
     if (content != "") {
       var entryId = $form.parents(".entry")[0].id;
       var groupId = $form.parents(".root.entry").find('.group')[0].attributes[0].value;
-      $(this).after("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+      $(this).after($loading_img);
       postEntry(content, groupId, entryId);
     } else {
       alert("Input content");
@@ -186,7 +188,7 @@ $(document).ready(function() {
   }
 
   $('#reload').live("click", function(){
-    $(this).append("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+    $(this).append($loading_img);
     getHomeEntries();
   });
 });
