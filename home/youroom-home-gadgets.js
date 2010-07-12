@@ -102,7 +102,7 @@ $(document).ready(function() {
     var entryId = entry.id;
     var groupId = $(this).parents(".root.entry").find('.group')[0].attributes[0].value;
     var url = "https://www.youroom.in/r/" + groupId + "/entries/" + entryId + ".json";
-    $(this).addClass('disable').removeClass('show').append("<img src='http://dl.dropbox.com/u/2322888/bouncing_ball.gif' class='loading'>");
+    $(this).addClass('disable').removeClass('show').append("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
 
     callYouRoom(url, "get", function(result) {
       $(entry).find('.children').empty().haml(getChildrenHaml(result.entry, groupId));
@@ -162,7 +162,7 @@ $(document).ready(function() {
     if (content != "") {
       var entryId = $form.parents(".entry")[0].id;
       var groupId = $form.parents(".root.entry").find('.group')[0].attributes[0].value;
-      $(this).after("<img src='http://dl.dropbox.com/u/2322888/bouncing_ball.gif' class='loading'>");
+      $(this).after("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
       postEntry(content, groupId, entryId);
     } else {
       alert("Input content");

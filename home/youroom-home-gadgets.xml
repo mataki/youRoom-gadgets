@@ -21,8 +21,8 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
   <script src="http://github.com/creationix/jquery-haml/raw/master/jquery.haml-1.3.js"></script>
-  <script src="http://dl.dropbox.com/u/2322888/youroom-home-gadgets.js"></script>
-  <link href="http://dl.dropbox.com/u/2322888/youroom-home-stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="http://github.com/mataki/youRoom-gadgets/raw/master/home/youroom-home-gadgets.js"></script>
+  <link href="http://github.com/mataki/youRoom-gadgets/raw/master/home/youroom-home-stylesheet.css" media="screen" rel="stylesheet" type="text/css">
 
   <div id="main" style="display: none">
   </div>
