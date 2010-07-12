@@ -32,6 +32,12 @@ $(document).ready(function() {
     showOneSection('main');
     var $main = $("#main");
 
+    $main.empty();
+
+    $main.haml(["#header",
+                ["#reload.link", "Reload"]
+               ]);
+
     for(var i = 0; i < result.length; i++) {
       var entry = result[i];
       showEachResult(entry["entry"], $main);
@@ -43,11 +49,7 @@ $(document).ready(function() {
   function getHomeEntries() {
     var url = "http://www.youroom.sg/?format=json";
 
-    callYouRoom(url, "get", function (result) {
-        showResults(result);
-        showOneSection('main');
-      }
-    );
+    callYouRoom(url, "get", showResults);
   }
 
   function callYouRoom(url, method, successCallback, postdata){
@@ -182,4 +184,9 @@ $(document).ready(function() {
       .find('form.comment textarea').val('');
     $('.loading').hide();
   }
+
+  $('#reload').live("click", function(){
+    $(this).append("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+    getHomeEntries();
+  });
 });
