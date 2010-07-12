@@ -25,7 +25,7 @@ $(document).ready(function() {
   }
 
   function getPictureUrl(entry, groupId) {
-    return "https://www.youroom.in/r/" + groupId + "/participations/" + entry["participation"]["id"] + "/picture";
+    return "http://www.youroom.sg/r/" + groupId + "/participations/" + entry["participation"]["id"] + "/picture";
   }
 
   function showResults(result) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
   }
 
   function getHomeEntries() {
-    var url = "https://www.youroom.in/?format=json";
+    var url = "http://www.youroom.sg/?format=json";
 
     callYouRoom(url, "get", function (result) {
         showResults(result);
@@ -101,7 +101,7 @@ $(document).ready(function() {
     var entry = $(this).parents(".root.entry")[0];
     var entryId = entry.id;
     var groupId = $(this).parents(".root.entry").find('.group')[0].attributes[0].value;
-    var url = "https://www.youroom.in/r/" + groupId + "/entries/" + entryId + ".json";
+    var url = "http://www.youroom.sg/r/" + groupId + "/entries/" + entryId + ".json";
     $(this).addClass('disable').removeClass('show').append("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
 
     callYouRoom(url, "get", function(result) {
@@ -171,7 +171,7 @@ $(document).ready(function() {
   });
 
   function postEntry(content, groupId, parentId) {
-    var url = "https://www.youroom.in/r/" + groupId + "/entries.json";
+    var url = "http://www.youroom.sg/r/" + groupId + "/entries.json";
     callYouRoom(url, "post", addComment, {"entry[content]":content, "entry[parent_id]": parentId});
   }
 
