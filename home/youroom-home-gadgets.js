@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var loading_img_dom = $("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+  var $loading_img = $("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
 
   function showOneSection(toshow) {
     $('#main, #approval, #waiting').hide();
