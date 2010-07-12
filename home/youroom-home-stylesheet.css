@@ -1,0 +1,57 @@
+#main {
+  margin: 0px;
+  padding: 0px;
+  font-size: small;
+}
+.entry {
+  padding: 4px 0px;
+}
+.entry.root {
+  border-bottom: 1px solid silver;
+}
+.entry img.profile {
+  float: left;
+  margin: 4px;
+}
+
+.entry img.loading {
+  height: 1em;
+}
+
+.entry .name {
+  color: gray;
+}
+.entry .navi {
+  background-color: #eee;
+}
+.entry .navi .link {
+  margin: 4px;
+  float: left;
+}
+
+form.comment {
+  display: none;
+}
+
+form.comment textarea {
+  width: 95%;
+}
+.children {
+  margin-left: 10px;
+ }
+
+.link {
+  color: blue;
+  cursor: pointer;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.link.disable {
+  color: gray;
+}
+
+.clear_left {
+  clear: left;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Module>
+  <ModulePrefs title="youRoom Home">
+    <Require feature="opensocial-0.8" />
+    <Require feature="locked-domain"/>
+    <Require feature="dynamic-height"/>
+    <OAuth>
+      <Service name="youroom">
+        <Access url="http://youroom.in/oauth/access_token" method="GET" />
+        <Request url="http://youroom.in/oauth/request_token" method="GET" />
+        <Authorization url="http://youroom.in/oauth/authorize" />
+      </Service>
+    </OAuth>
+  </ModulePrefs>
+  <Content type="html">
+  <![CDATA[
+
+  <!-- shindig oauth popup handling code -->
+  <script src="http://gadget-doc-examples.googlecode.com/svn/trunk/opensocial-gadgets/popup.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
+  <script src="http://github.com/creationix/jquery-haml/raw/master/jquery.haml-1.3.js"></script>
+  <script src="http://dl.dropbox.com/u/2322888/youroom-home-gadgets.js"></script>
+  <link href="http://dl.dropbox.com/u/2322888/youroom-home-stylesheet.css" media="screen" rel="stylesheet" type="text/css">
+
+  <div id="main" style="display: none">
+  </div>
+
+  <div id="approval" style="display: none">
+    <img src="http://gadget-doc-examples.googlecode.com/svn/trunk/images/new.gif">
+    <a href="#" id="personalize">Personalize this gadget</a>
+  </div>
+
+  <div id="waiting" style="display: none">
+    Please click
+    <a href="#" id="approvaldone">I've approved access</a>
+    once you've approved access to your data.
+  </div>
+  ]]>
+  </Content>
+</Module>
