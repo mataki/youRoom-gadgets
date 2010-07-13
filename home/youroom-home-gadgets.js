@@ -9,7 +9,9 @@ $(document).ready(function() {
 
   function showEachResult(entry, main) {
     main.haml([".root.entry"+"#"+entry["id"],
-               ["%img.profile", {src:getPictureUrl(entry, entry["participation"]["group"]["to_param"]), width:48, height:48}],
+               ["%img.profile", {src:getPictureUrl(entry, entry["participation"]["group"]["to_param"]), width:48, height:48, $:{
+                                   $: function(){ this.onerror = "this.src = ' + default_img_url + '"; }
+                                 }}],
                [".name", entry["participation"]["name"]],
                [".group", {data:entry["participation"]["group"]["to_param"]}, entry["participation"]["group"]["name"]],
                [".content", entry["content"]],
@@ -138,7 +140,9 @@ $(document).ready(function() {
     }
 
     haml = [".entry"+"#"+entry["id"],
-            ["%img.profile", {src:getPictureUrl(entry, groupParam.to_param), width:48, height:48}],
+            ["%img.profile", {src:getPictureUrl(entry, entry["participation"]["group"]["to_param"]), width:48, height:48, $:{
+                                $: function(){ this.onerror = "this.src = ' + default_img_url + '"; }
+                              }}],
             [".name", entry["participation"]["name"]],
             [".group"],
             [".content", entry["content"]],
@@ -191,10 +195,5 @@ $(document).ready(function() {
   $('#reload').live("click", function(){
     $(this).append($loading_img);
     getHomeEntries();
-  });
-
-  $('img.profile').live('error', function(){
-    alert($(this).attr('src'));
-    $(this).attr('src', default_img_url);
   });
 });
