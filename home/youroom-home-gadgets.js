@@ -10,7 +10,7 @@ $(document).ready(function() {
   function showEachResult(entry, main) {
     main.haml([".root.entry"+"#"+entry["id"],
                ["%img.profile", {src:getPictureUrl(entry, entry["participation"]["group"]["to_param"]), width:48, height:48, $:{
-                                   $: function(){ this.onerror = "this.src = ' + default_img_url + '"; }
+                                   $: function(){ this.onerror = "this.src = '" + default_img_url + "'"; }
                                  }}],
                [".name", entry["participation"]["name"]],
                [".group", {data:entry["participation"]["group"]["to_param"]}, entry["participation"]["group"]["name"]],
