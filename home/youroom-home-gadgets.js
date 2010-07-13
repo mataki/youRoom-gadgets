@@ -196,4 +196,10 @@ $(document).ready(function() {
     $(this).append($loading_img);
     getHomeEntries();
   });
+
+  $('img.profile').live('error', function(){
+    alert($(this).attr('src'));
+    $(this).attr('src', default_img_url);
+  });
+
 });
