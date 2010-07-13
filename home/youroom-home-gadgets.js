@@ -140,8 +140,8 @@ $(document).ready(function() {
     }
 
     haml = [".entry"+"#"+entry["id"],
-            ["%img.profile", {src:getPictureUrl(entry, entry["participation"]["group"]["to_param"]), width:48, height:48, $:{
-                                $: function(){ this.onerror = "this.src = ' + default_img_url + '"; }
+            ["%img.profile", {src:getPictureUrl(entry, groupParam.to_param), width:48, height:48, $:{
+                                $: function(){ this.onerror = "this.src = '" + default_img_url + "'"; }
                               }}],
             [".name", entry["participation"]["name"]],
             [".group"],
