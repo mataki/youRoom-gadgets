@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var $loading_img = $("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
+  var default_img_url = "https://www.youroom.in/images/default_picture.png";
 
   function showOneSection(toshow) {
     $('#main, #approval, #waiting').hide();
@@ -190,5 +191,10 @@ $(document).ready(function() {
   $('#reload').live("click", function(){
     $(this).append($loading_img);
     getHomeEntries();
+  });
+
+  $('img.profile').live('error', function(){
+    alert($(this).attr('src'));
+    $(this).attr('src', default_img_url);
   });
 });
