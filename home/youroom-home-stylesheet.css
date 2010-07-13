@@ -3,8 +3,17 @@
   padding: 0px;
   font-size: small;
 }
+
+#header {
+  height: 1.5em;
+}
+
+#header div {
+  float: right;
+}
 .entry {
   padding: 4px 0px;
+  position: relative;
 }
 .entry.root {
   border-bottom: 1px solid silver;
@@ -14,7 +23,13 @@
   margin: 4px;
 }
 
-.entry img.loading {
+.entry .group {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+img.loading {
   height: 1em;
 }
 
