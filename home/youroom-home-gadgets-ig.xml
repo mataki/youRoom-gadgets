@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Module>
-  <ModulePrefs title="youRoom Home">
+  <ModulePrefs title="youRoom Home" author_email="matsumura.aki@gmail.com">
     <Require feature="opensocial-0.8" />
     <Require feature="locked-domain"/>
     <Require feature="dynamic-height"/>
