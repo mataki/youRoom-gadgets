@@ -1,6 +1,8 @@
 $(document).ready(function() {
+  var youRoomHost = "https://www.youroom.sg";
+
   var $loading_img = $("<img src='http://github.com/mataki/youRoom-gadgets/raw/master/home/bouncing_ball.gif' class='loading'>");
-  var default_img_url = "https://www.youroom.in/images/default_picture.png";
+  var default_img_url = youRoomHost + "/images/default_picture.png";
 
   function showOneSection(toshow) {
     $('#main, #approval, #waiting').hide();
@@ -30,7 +32,7 @@ $(document).ready(function() {
   }
 
   function getPictureUrl(entry, groupId) {
-    return "https://www.youroom.in/r/" + groupId + "/participations/" + entry["participation"]["id"] + "/picture";
+    return youRoomHost + "/r/" + groupId + "/participations/" + entry["participation"]["id"] + "/picture";
   }
 
   function showResults(result) {
@@ -52,7 +54,7 @@ $(document).ready(function() {
   }
 
   function getHomeEntries() {
-    var url = "https://www.youroom.in/?format=json";
+    var url = youRoomHost + "/?format=json";
 
     callYouRoom(url, "get", showResults);
   }
@@ -108,7 +110,7 @@ $(document).ready(function() {
     var entry = $(this).parents(".root.entry")[0];
     var entryId = entry.id;
     var groupId = $(this).parents(".root.entry").find('.group')[0].attributes[0].value;
-    var url = "https://www.youroom.in/r/" + groupId + "/entries/" + entryId + ".json";
+    var url = youRoomHost + "/r/" + groupId + "/entries/" + entryId + ".json";
     $(this).addClass('disable').removeClass('show').append($loading_img);
 
     callYouRoom(url, "get", function(result) {
@@ -180,7 +182,7 @@ $(document).ready(function() {
   });
 
   function postEntry(content, groupId, parentId) {
-    var url = "https://www.youroom.in/r/" + groupId + "/entries.json";
+    var url = youRoomHost + "/r/" + groupId + "/entries.json";
     callYouRoom(url, "post", addComment, {"entry[content]":content, "entry[parent_id]": parentId});
   }
 

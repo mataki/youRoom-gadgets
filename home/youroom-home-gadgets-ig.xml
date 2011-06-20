@@ -7,9 +7,9 @@
     <Require feature="dynamic-height"/>
     <OAuth>
       <Service name="youroom">
-        <Access url="http://youroom.in/oauth/access_token" method="GET" />
-        <Request url="http://youroom.in/oauth/request_token" method="GET" />
-        <Authorization url="http://youroom.in/oauth/authorize?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" />
+        <Access url="http://youroom.sg/oauth/access_token" method="GET" />
+        <Request url="http://youroom.sg/oauth/request_token" method="GET" />
+        <Authorization url="http://youroom.sg/oauth/authorize?oauth_callback=http://oauth.gmodules.com/gadgets/oauthcallback" />
       </Service>
     </OAuth>
   </ModulePrefs>
